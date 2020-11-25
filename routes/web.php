@@ -14,28 +14,31 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::group(['prefix' => 'user'], function () {
         Route::group(['as' => 'user'], function () {
-            Route::get('', 'User\UserController@index')->name('.index');
-            Route::get('create','User\UserController@create')->name('.create');
-            Route::post('insert', 'User\UserController@insert')->name('.insert');
-            Route::get('{id}', 'User\UserController@findById')->name('.find');
+            Route::get('/find', 'User\UserController@find')->name('.find');
+//            Route::get('', 'User\UserController@index')->name('.index');
+//            Route::get('create','User\UserController@create')->name('.create');
+//            Route::post('insert', 'User\UserController@insert')->name('.insert');
+//            Route::get('{id}', 'User\UserController@findById')->name('.find');
             Route::put('', 'User\UserController@update')->name('.update');
         });
     });
 
+
     Route::group(['prefix' => 'products'], function () {
         Route::group(['as' => 'products'], function () {
-            Route::get('', 'Products\ProductsController@index')->name('.index');
+//            Route::get('', 'Products\ProductsController@index')->name('.index');
             Route::get('list', 'Products\ProductsController@show')->name('.show');
-            Route::post('insert', 'Products\ProductsController@insert')->name('.insert');
+//            Route::post('insert', 'Products\ProductsController@insert')->name('.insert');
         });
     });
 
-    Route::group(['prefix' => 'typeProduct'], function () {
-        Route::group(['as' => 'typeProduct'], function () {
-            Route::get('', 'TypeProduct\TypeProductController@index')->name('.index');
-            Route::post('insert', 'TypeProduct\TypeProductController@insert')->name('.insert');
-        });
-    });
+
+//    Route::group(['prefix' => 'typeProduct'], function () {
+//        Route::group(['as' => 'typeProduct'], function () {
+//            Route::get('', 'TypeProduct\TypeProductController@index')->name('.index');
+//            Route::post('insert', 'TypeProduct\TypeProductController@insert')->name('.insert');
+//        });
+//    });
 
 });
 

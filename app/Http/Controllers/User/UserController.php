@@ -9,6 +9,7 @@ use App\Http\Requests\User\InsertUser;
 use App\Http\Responses\ApiResponse;
 use App\Services\User\UserService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -108,20 +109,43 @@ class UserController extends Controller
     }
 
     /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function find()
+    {
+        $userLogged = Auth::user();
+        $user = $this->service
+            ->find($userLogged->id);
+        return view('profile.index')->with(['user' => $user]);
+    }
+
+    /**
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request)
     {
+        $userLogged = Auth::user();
         try{
             $this->service
                 ->update($request->all());
         }catch (\Exception $exception){
-            return redirect()->route('user.index')
+            if($userLogged->user_type_id == UserConstant::ADMIN){
+                return redirect()->route('user.index')
+                    ->with('error', $exception->getMessage());
+            }
+            return redirect()->route('user.find')
                 ->with('error', $exception->getMessage());
         }
-        return redirect()->route('user.index')
+
+        if($userLogged->user_type_id == UserConstant::ADMIN){
+            return redirect()->route('user.index')
+                ->with('success', 'Usuário atualizado com sucesso');
+        }
+
+        return redirect()->route('user.find')
             ->with('success', 'Usuário atualizado com sucesso');
+
     }
 
 }

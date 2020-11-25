@@ -45,6 +45,8 @@ class UserService
      */
     public function update(array $request)
     {
+        $request['password'] = bcrypt($request['password']);
+
         $result = $this->repository->find($request['id']);
         $result->update($request);
         return $result;

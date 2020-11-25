@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Ruby Rose',
+    'title' => 'Revendedor Ruby Rose',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -220,47 +220,17 @@ return [
             'url'         => 'home',
             'icon'        => 'fas fa-fw fa-home',
         ],
-        ['header' => 'Usuários'],
-        [
-            'text' => 'Gerenciar usuários',
-            'icon' => 'fas fa-fw fa-user',
-            'submenu' => [
-                [
-                    'text' => 'Listagem de usuários',
-                    'url'  => 'user'
-                ],
-                [
-                    'text' => 'Inserir usuário',
-                    'url'  => 'user/create'
-                ]
-            ]
-        ],
-        ['header' => 'Gerenciamento de produtos'],
-        [
-            'text' => 'Gerenciamento',
-            'icon' => 'fa fa-cog',
-            'submenu' => [
-                [
-                    'text' => 'Tipos de produto',
-                    'icon' => 'fa fa-cogs',
-                    'url'  => 'typeProduct'
-                ],
-                [
-                    'text' => 'Produtos',
-                    'icon' => 'fa fa-cogs',
-                    'submenu' => [
-                        [
-                            'text' => 'Inserir Produto',
-                            'url'  => 'products'
-                        ],
-                        [
-                            'text' => 'Listar Produto',
-                            'url'  => 'products/list'
-                        ],
 
-                    ]
-                ]
-            ]
+        [
+            'text' => 'Meu perfil',
+            'url'  => 'user/find',
+            'icon' => 'fas fa-fw fa-home',
+        ],
+
+        [
+            'text' => 'Produtos',
+            'url'  => 'products/list',
+            'icon' => 'fas fa-fw fa-home',
         ],
 
 
