@@ -4,6 +4,26 @@ $('.carousel').carousel({
 
 let products = [];
 
+elementProperty.addEventInElement('.add-bag','onclick',function (){
+    let product = JSON.parse(this.getAttribute('data'));
+    let id = product.id;
+    elementProperty.getElement(`#qtd-${id}`,product => {
+        SwalCustom.dialogConfirm(`Tem certeza que deseja adicionar ${product.value} unidades de ${product.name} a sua sacola?`,'', status => {
+            if(!status)
+                return false;
+
+            let data = {
+                'amount' : product.value,
+                'product_id' :  product.id
+            };
+            products.push(data);
+            console.log(products)
+            swal(`${product.name} adicionado a sua sacola com sucesso`,'','success');
+        })
+
+    });
+})
+
 elementProperty.addEventInElement('.add-item','onclick',function (){
     let data = JSON.parse(this.getAttribute('product'));
     let id = data.id;
@@ -11,21 +31,20 @@ elementProperty.addEventInElement('.add-item','onclick',function (){
         let actualValue = product.value;
         product.value = (parseInt(actualValue) + 1);
 
-        SwalCustom.toast(product.value + ' itens | ' + data.name+' Adcionado a sua sacola','','','');
+        // SwalCustom.toast(product.value + ' itens | ' + data.name+' Adcionado a sua sacola','','','');
     });
 })
-
 
 elementProperty.addEventInElement('.remove-item','onclick',function (){
     let data = JSON.parse(this.getAttribute('product'));
     let id = data.id;
     let min = parseInt(data.minimum_order);
 
-    elementProperty.getElement(`#qtd-${id}`, product => {
+    elementProperty.getElement(`#qtd-${id}`,product => {
         let actualValue = parseInt(product.value);
         let qtd = product.value = (parseInt(actualValue) - 1);
-        if(qtd > min)
-            return SwalCustom.toast('1 item | ' + data.name+' removido a sua sacola','','','');
+        // if(qtd > min)
+            // return SwalCustom.toast('1 item | ' + data.name+' removido a sua sacola','','','');
         product.value = min;
         return swal(`O pedido mínimo para ${data.name} são ${min} unidades`,'','info');
     });

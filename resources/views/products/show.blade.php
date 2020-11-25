@@ -76,6 +76,11 @@
                                     </svg>
                                 </button>
                             </div>
+                            <div class="center" style="margin-top: 1vw">
+                                <button class="btn btn-outline-info add-bag" data="{{ $product }}" id="{{ $product->id }}">
+                                    <label>Adcionar a sacola</label>
+                                </button>
+                            </div>
                         </small>
                     </div>
 
