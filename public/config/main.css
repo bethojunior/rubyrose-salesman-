@@ -1,3 +1,11 @@
+.layout-lg-footer-fixed .wrapper .content-wrapper {
+    padding-bottom: calc(3.5rem + 1px);
+    background-image: url("../assets/images/background.jpg")!important;
+    color: white!important;
+}
+body:not(.sidebar-mini-md) .content-wrapper, body:not(.sidebar-mini-md) .content-wrapper::before, body:not(.sidebar-mini-md) .main-footer, body:not(.sidebar-mini-md) .main-footer::before, body:not(.sidebar-mini-md) .main-header, body:not(.sidebar-mini-md) .main-header::before {
+    margin-left: 0;
+}
 .relative{
     position: relative!important;
 }

@@ -2,13 +2,13 @@
 
 @section('title', 'Listagem de produtos')
 @section('content_header')
-    <h1 class="m-0 text-dark">Produtos</h1>
+    <h1 class="m-0">Produtos</h1>
 @stop
 
 @section('content')
     @include('includes.alerts')
-
-    <div class="row col-lg-12 col-sm-12">
+    <link href="{{ asset('css/products/index.css') }}" rel="stylesheet">
+    <div class="row col-lg-12 col-sm-12 div-products">
         <div class="row col-lg-12 col-sm-12 ">
             <div class="form-group col-sm-12 col-lg-12">
                 <span>Tipo de produtos</span>
@@ -21,7 +21,7 @@
             </div>
             <div class="form-group col-lg-12 col-sm-12">
                 <span>Nome</span>
-                <input class="form-control" placeholder="Busque um produto aqui">
+                <input id="search-product" class="form-control" placeholder="Busque um produto aqui">
             </div>
         </div>
         @foreach($products as $product)

@@ -15,6 +15,7 @@ elementProperty.addEventInElement('.add-item','onclick',function (){
     });
 })
 
+
 elementProperty.addEventInElement('.remove-item','onclick',function (){
     let data = JSON.parse(this.getAttribute('product'));
     let id = data.id;
@@ -37,4 +38,8 @@ elementProperty.addEventInElement('#product-types','onchange',function (){
             return these.style.display = 'none'
         these.style.display = ''
     })
+})
+
+elementProperty.addEventInElement('#search-product','oninput',function (){
+    console.log(this.value)
 })
