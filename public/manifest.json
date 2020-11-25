@@ -1,0 +1,37 @@
+{
+    "short_name": "Ruby Rose",
+    "name": "Ruby Rose Revendedores",
+    "description": "Ruby Rose Distribuidor",
+    "icons": [
+        {
+            "src": "/assets/images/logo/logo.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/logo/logo.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/logo/logo.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/logo/logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/logo/logo.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "https://revendedorrubyrose.madgic.com.br/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "theme_color": "#E35070",
+    "background_color": "#E35070"
+}
