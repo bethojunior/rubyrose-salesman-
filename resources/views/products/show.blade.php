@@ -12,7 +12,7 @@
         <div class="row col-lg-12 col-sm-12 ">
             <div class="form-group col-sm-12 col-lg-12">
                 <span>Tipo de produtos</span>
-                <select id="product-types" class="form-control">
+                <select id="product-types" class="form-control col-sm-12">
                     <option value="all">Todos</option>
                     @foreach($types as $type)
                         <option value="{{ $type->id }}">{{ $type->name }}</option>
@@ -63,7 +63,7 @@
 {{--                    <a href="#" class="btn btn-primary">Go somewhere</a>--}}
                     <div class="card-footer">
                         <small class="text-muted">
-                            <input readonly style="text-align: center" class="form-control" type="number" product="{{ $product->id }}" value="{{ $product->value }}" id="qtd-{{$product->id}}" min="{{ $product->minimum_order }}" value="{{ $product->minimum_order }}">
+                            <input readonly style="text-align: center" class="form-control" type="number" product="{{ $product->id }}" value="{{ $product->minimum_order }}" id="qtd-{{$product->id}}" min="{{ $product->minimum_order }}" value="{{ $product->minimum_order }}">
                             <div class="center" style="margin-top: 2vw">
                                 <button product="{{ $product }}" class="btn btn-outline-info add-item" id="product-{{ $product->id }}" style="margin-right: 2vw">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

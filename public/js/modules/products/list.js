@@ -19,10 +19,15 @@ elementProperty.addEventInElement('.add-item','onclick',function (){
 elementProperty.addEventInElement('.remove-item','onclick',function (){
     let data = JSON.parse(this.getAttribute('product'));
     let id = data.id;
+    let min = parseInt(data.minimum_order);
+
     elementProperty.getElement(`#qtd-${id}`, product => {
-        let actualValue = product.value;
-        product.value = (parseInt(actualValue) - 1);
-        SwalCustom.toast('1 item | ' + data.name+' removido a sua sacola','','','');
+        let actualValue = parseInt(product.value);
+        let qtd = product.value = (parseInt(actualValue) - 1);
+        if(qtd > min)
+            return SwalCustom.toast('1 item | ' + data.name+' removido a sua sacola','','','');
+        product.value = min;
+        return swal(`O pedido mínimo para ${data.name} são ${min} unidades`,'','info');
     });
 })
 
