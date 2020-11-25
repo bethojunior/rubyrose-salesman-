@@ -18,7 +18,7 @@
     </div>
 
     <div class="row col-lg-12 col-sm-12 div-products">
-        <div class="row col-lg-12 col-sm-12 ">
+        <div class=" col-lg-12 col-sm-12 ">
             <div class="form-group col-sm-12 col-lg-12">
                 <span class="center">Tipo de produtos</span>
                 <select id="product-types" class="form-control col-sm-12">
