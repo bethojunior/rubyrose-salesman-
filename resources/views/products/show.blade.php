@@ -58,7 +58,8 @@
                     </p>
                     <p>
                         <span>Tipo do produto : {{ $product->type[0]['name'] }}</span>
-                    </p>info
+                    </p>
+                    
 {{--                    <a href="#" class="btn btn-primary">Go somewhere</a>--}}
                     <div class="card-footer">
                         <small class="text-muted">

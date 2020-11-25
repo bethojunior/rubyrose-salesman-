@@ -1,4 +1,6 @@
 .div-products{
     /*background-color: #0b2e13;*/
-
+}
+.card-body{
+    color: hotpink!important;
 }
