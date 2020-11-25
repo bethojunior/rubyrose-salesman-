@@ -2,7 +2,9 @@
 
 @section('title', 'Cadastrar usuário ')
 @section('content_header')
-    <h1 class="m-0 text-dark">Meu perfil</h1>
+    <div class="center">
+        <h1 class="m-0">Meu perfil</h1>
+    </div>
 @stop
 
 @section('content')

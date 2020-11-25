@@ -2,7 +2,9 @@
 
 @section('title', 'Listagem de produtos')
 @section('content_header')
-    <h1 class="m-0">Produtos</h1>
+    <div class="center">
+        <h1 class="m-0">Produtos</h1>
+    </div>
 @stop
 
 @section('content')
@@ -18,7 +20,7 @@
     <div class="row col-lg-12 col-sm-12 div-products">
         <div class="row col-lg-12 col-sm-12 ">
             <div class="form-group col-sm-12 col-lg-12">
-                <span>Tipo de produtos</span>
+                <span class="center">Tipo de produtos</span>
                 <select id="product-types" class="form-control col-sm-12">
                     <option value="all">Todos</option>
                     @foreach($types as $type)
@@ -27,7 +29,7 @@
                 </select>
             </div>
             <div class="form-group col-lg-12 col-sm-12">
-                <span>Nome</span>
+                <span class="center">Nome</span>
                 <input id="search-product" class="form-control" placeholder="Busque um produto aqui">
             </div>
         </div>
