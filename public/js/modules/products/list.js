@@ -7,8 +7,10 @@ let products = [];
 elementProperty.addEventInElement('.add-bag','onclick',function (){
     let product = JSON.parse(this.getAttribute('data'));
     let id = product.id;
+    let name = product.name;
+    console.log(product)
     elementProperty.getElement(`#qtd-${id}`,product => {
-        SwalCustom.dialogConfirm(`Tem certeza que deseja adicionar ${product.value} unidades de ${product.name} a sua sacola?`,'', status => {
+        SwalCustom.dialogConfirm('Adicionar a sacola',`Tem certeza que deseja adicionar ${product.value} unidades de ${name} a sua sacola?`, status => {
             if(!status)
                 return false;
 
@@ -18,7 +20,7 @@ elementProperty.addEventInElement('.add-bag','onclick',function (){
             };
             products.push(data);
             console.log(products)
-            swal(`${product.name} adicionado a sua sacola com sucesso`,'','success');
+            swal(`${product.value} unidades de ${name} adicionado a sua sacola com sucesso`,'','success');
         })
 
     });
