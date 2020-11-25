@@ -1,0 +1,10 @@
+.relative{
+    position: relative!important;
+}
+[class*=sidebar-dark-] {
+    background-color: #C04B66!important;
+}
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: #a33a51!important;
+    color: #fff!important;
+}
