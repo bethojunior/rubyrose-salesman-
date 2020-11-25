@@ -18,7 +18,7 @@
                         </div>
                         @foreach($product->images as $image)
                             <div class="carousel-item">
-                                <img src="{{ asset('storage/').'/'.$image->image }}" class="d-block w-100" alt="...">
+                                <img src="{{\App\Constants\ImageConstant::PATH.$image->image }}" class="d-block w-100" alt="...">
                             </div>
                         @endforeach
                     </div>
