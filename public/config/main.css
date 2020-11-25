@@ -18,3 +18,14 @@ body:not(.sidebar-mini-md) .content-wrapper, body:not(.sidebar-mini-md) .content
     background-color: #a33a51!important;
     color: #fff!important;
 }
+.content-wrapper>.content {
+     padding: 0!important;
+}
+
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    width: 100%;
+    padding-right: 7.5px;
+    padding-left: 22.5px!important;
+    margin-right: auto;
+    margin-left: auto;
+}
