@@ -42,7 +42,9 @@ class ProductsController extends Controller
     {
         $products = $this->service
             ->findAll();
-        return view('products.show')->with(['products' => $products]);
+        $types = $this->typeProduct
+            ->getAll();
+        return view('products.show')->with(['products' => $products,'types' => $types]);
     }
 
     /**

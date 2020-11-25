@@ -1,16 +1,16 @@
 <?php
 
 return [
-    'name' => 'LaravelPWA',
+    'name' => 'RubyRose',
     'manifest' => [
         'name' => env('APP_NAME', 'My PWA App'),
         'short_name' => 'RubyRose',
         'start_url' => '/',
-        'background_color' => '#C04B66',
-        'theme_color' => '#C04B66',
+        'background_color' => '#E35070',
+        'theme_color' => '#E35070',
         'display' => 'standalone',
         'orientation'=> 'any',
-        'status_bar'=> '#C04B66',
+        'status_bar'=> '#E35070',
         'icons' => [
             '72x72' => [
                 'path' => '/images/icons/icon-72x72.png',

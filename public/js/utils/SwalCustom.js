@@ -86,7 +86,7 @@ class SwalCustom {
             subtitle : subtitle,
             icon : icon,
             autohide : true,
-            delay: 5000,
+            delay: 1000,
         });
     }
 

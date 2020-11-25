@@ -24,3 +24,17 @@ elementProperty.addEventInElement('.remove-item','onclick',function (){
         SwalCustom.toast('1 item | ' + data.name+' removido a sua sacola','','','');
     });
 })
+
+elementProperty.addEventInElement('#product-types','onchange',function (){
+    let type = this.value;
+    elementProperty.getElement('.product', these => {
+
+        if(type === 'all'){
+            return these.style.display = ''
+        }
+
+        if(these.getAttribute('type') !== type)
+            return these.style.display = 'none'
+        these.style.display = ''
+    })
+})

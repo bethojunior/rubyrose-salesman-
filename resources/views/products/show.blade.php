@@ -7,11 +7,26 @@
 
 @section('content')
     @include('includes.alerts')
-{{--    {{ dd($products) }}--}}
+
     <div class="row col-lg-12 col-sm-12">
+        <div class="row col-lg-12 col-sm-12 ">
+            <div class="form-group col-sm-12 col-lg-12">
+                <span>Tipo de produtos</span>
+                <select id="product-types" class="form-control">
+                    <option value="all">Todos</option>
+                    @foreach($types as $type)
+                        <option value="{{ $type->id }}">{{ $type->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group col-lg-12 col-sm-12">
+                <span>Nome</span>
+                <input class="form-control" placeholder="Busque um produto aqui">
+            </div>
+        </div>
         @foreach($products as $product)
-            <div class="card col-lg-4 col-sm-12">
-                <div id="carouselExampleControls{{$product->id}}" class="carousel slide" data-ride="carousel">
+            <div type="{{ $product->type_product_id }}" style="padding-top: 2vw" class="card col-lg-4 col-sm-12 product">
+                <div  id="carouselExampleControls{{$product->id}}" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active item-carousel">
                             <img src="{{ asset('assets/images/logo/logo.jpeg') }}" class="d-block w-100" alt="...">
