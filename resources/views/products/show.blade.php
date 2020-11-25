@@ -25,7 +25,7 @@
             </div>
         </div>
         @foreach($products as $product)
-            <div type="{{ $product->type_product_id }}" style="padding-top: 2vw" class="card col-lg-4 col-sm-12 product">
+            <div title="{{ $product->name }}" type="{{ $product->type_product_id }}" style="padding-top: 2vw" class="card col-lg-4 col-sm-12 product">
                 <div  id="carouselExampleControls{{$product->id}}" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active item-carousel">
@@ -59,7 +59,7 @@
                     <p>
                         <span>Tipo do produto : {{ $product->type[0]['name'] }}</span>
                     </p>
-                    
+
 {{--                    <a href="#" class="btn btn-primary">Go somewhere</a>--}}
                     <div class="card-footer">
                         <small class="text-muted">

@@ -41,5 +41,11 @@ elementProperty.addEventInElement('#product-types','onchange',function (){
 })
 
 elementProperty.addEventInElement('#search-product','oninput',function (){
-    console.log(this.value)
+    let that = this.value;
+    elementProperty.getElement('.product', products => {
+        let product = products.getAttribute('title').toUpperCase();
+        if(!product.includes(that.toUpperCase()))
+            return products.style.display = 'none'
+        return products.style.display = ''
+    })
 })
