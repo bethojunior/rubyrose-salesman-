@@ -25,6 +25,6 @@ class Sales extends Model
      */
     public function user()
     {
-        return $this->hasMany(User::class,'id');
+        return $this->hasMany(User::class,'id','user_id');
     }
 }
