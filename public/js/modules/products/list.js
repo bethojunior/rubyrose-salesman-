@@ -86,13 +86,14 @@ elementProperty.addEventInElement('.finish-bag','onclick',function (){
     let formData = new FormData();
     formData.append('sales', 'products');
     SalesController.create(products).then(response => {
+        let data = response.response;
         if(!response.status)
             return swal('Erro ao inserir suas vendas','Contate o fornecedor','info')
 
         products = [];
         swal('Venda enviada','Em 5 segundos você será redirecionado para um represetante comercial via whatspp para finalizar sua venda','success');
         setTimeout(() => {
-            window.location.href = 'https://api.whatsapp.com/send?phone=5585994253764&text=Ol%C3%A1%2C%20meu%20pedido%20%C3%A9%20o%20123456';
+            window.location.href = 'https://api.whatsapp.com/send?phone=5585994253764&text=Ol%C3%A1%2C%20o%20numero%20do%20meu%20pedido%20'+data.id;
         },5000)
     })
 })

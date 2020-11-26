@@ -30,13 +30,13 @@ class SalesController extends Controller
     public function create(Request $request)
     {
         try{
-            $this
+            $response = $this
                 ->service
                 ->create($request->all());
         }catch (\Exception $exception){
             return ApiResponse::error('',$exception->getMessage());
         }
-        return ApiResponse::success('','Inserido com sucesso');
+        return ApiResponse::success($response,'Inserido com sucesso');
     }
 
 }

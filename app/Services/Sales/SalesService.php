@@ -61,7 +61,7 @@ class SalesService
                 $sale->save();
                 array_push($saleId,$sale->id);
                 $sale->update(['sale_id' => $saleId[0]]);
-//                
+//
 //                $sale->sale_id = $sale->id;
 //                $this->repository->update($sale);
             }

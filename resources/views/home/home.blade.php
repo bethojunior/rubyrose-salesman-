@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/home/init.css') }}">
 {{--    {{ $sales }}--}}
     <div class="row col-sm-12 col-lg-12">
+
         @foreach($sales as $sale)
             <div class="card sales col-sm-3 col-lg-3">
                 <b>{{ $sale }}</b>
