@@ -19,6 +19,7 @@ class CreateSalesTable extends Migration
             $table->integer('product_id');
             $table->integer('user_id');
             $table->string('status');
+            $table->string('sale_id')->nullable();
             $table->timestamps();
         });
     }

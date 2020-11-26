@@ -28,6 +28,14 @@ class UserSeeder extends Seeder
                 'user_status_id' => '2',
                 'user_type_id' => '1',
             ],
+            [
+                'name' => 'rubia',
+                'email' => 'teste@teste.com',
+                'phone' => '85994253764',
+                'password' => Hash::make('admin12'),
+                'user_status_id' => '2',
+                'user_type_id' => '2',
+            ],
         ]);
     }
 }

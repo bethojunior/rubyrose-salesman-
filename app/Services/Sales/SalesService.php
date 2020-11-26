@@ -38,6 +38,14 @@ class SalesService
     }
 
     /**
+     * @param $id
+     * @return \Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model[]
+     */
+    public function getAllByUserSalesNull($id){
+        return $this->repository->getAllByUserSalesNull($id);
+    }
+
+    /**
      * @param array $request
      * @return Sales
      * @throws \Exception
@@ -45,20 +53,26 @@ class SalesService
     public function create(array $request)
     {
         try{
+            $saleId = [];
             DB::beginTransaction();
-
             foreach ($request['data'] as $data){
                 $data['status'] = SalesStatus::EM_ABERTO;
-                $user = new Sales($data);
-                $user->save();
+                $sale = new Sales($data);
+                $sale->save();
+                array_push($saleId,$sale->id);
+                $sale->update(['sale_id' => $saleId[0]]);
+//                
+//                $sale->sale_id = $sale->id;
+//                $this->repository->update($sale);
             }
+
             DB::commit();
 
         }catch (\Exception $exception){
             DB::rollBack();
             throw $exception;
         }
-        return $user;
+        return $sale;
     }
 
 }
