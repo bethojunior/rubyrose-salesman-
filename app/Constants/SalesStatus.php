@@ -8,4 +8,5 @@ class SalesStatus
 {
     const EM_ABERTO   = 1;
     const FINALIZADO  = 2;
+    const CANCELADO  = 3;
 }
