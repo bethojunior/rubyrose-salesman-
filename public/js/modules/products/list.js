@@ -2,21 +2,27 @@ $('.carousel').carousel({
     interval: 2000
 })
 
+let UserLogged;
 let products = [];
+
+elementProperty.getElement('#user-logged', user => {
+    UserLogged = JSON.parse(user.value);
+})
 
 elementProperty.addEventInElement('.add-bag','onclick',function (){
     let product = JSON.parse(this.getAttribute('data'));
     let id = product.id;
     let name = product.name;
-    console.log(product)
     elementProperty.getElement(`#qtd-${id}`,product => {
+        console.log(product)
         SwalCustom.dialogConfirm('Adicionar a sacola',`Tem certeza que deseja adicionar ${product.value} unidades de ${name} a sua sacola?`, status => {
             if(!status)
                 return false;
 
             let data = {
-                'amount' : product.value,
-                'product_id' :  product.id
+                'amount' : parseInt(product.value),
+                'product_id' :  id,
+                'user_id' : UserLogged.id
             };
             products.push(data);
             console.log(products)
@@ -73,5 +79,17 @@ elementProperty.addEventInElement('#search-product','oninput',function (){
         if(!product.includes(that.toUpperCase()))
             return products.style.display = 'none'
         return products.style.display = ''
+    })
+})
+
+elementProperty.addEventInElement('.finish-bag','onclick',function (){
+    console.log(products)
+    let formData = new FormData();
+    formData.append('sales', 'products');
+    SalesController.create(products).then(response => {
+        if(!response.status)
+            return swal('Erro ao inserir suas vendas','Contate o fornecedor','info')
+
+        return swal('Venda enviada com sucesso','','success');
     })
 })

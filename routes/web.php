@@ -40,5 +40,11 @@ Route::group(['middleware' => 'auth'], function () {
 //        });
 //    });
 
+    Route::group(['prefix' => 'sales'], function () {
+        Route::group(['as' => 'sales'], function () {
+//            Route::get('', 'Sales\SalesController@index')->name('.index');
+        });
+    });
+
 });
 

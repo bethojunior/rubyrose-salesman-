@@ -37,6 +37,7 @@ class ConnectionServer {
             body: formData,
         };
 
+
         if(api){
             return fetch(ConnectionServer.HostApi()+endPoint,myInit)
                 .then(function(response) {
@@ -60,14 +61,52 @@ class ConnectionServer {
      *
      * @param url
      * @param method
+     * @param params
      * @param resolve
      */
-    static simpleRequest(url,method,resolve){
+    static sendRequestApi(url, method = "GET", params = null, resolve = undefined) {
+
+        const request = new XMLHttpRequest();
+
+        request.onreadystatechange = function () {
+            if (request.readyState === 4) {
+                resolve(JSON.parse(this.responseText))
+            }
+        };
+        request.open(method, ConnectionServer.HostApi() + url);
+        request.send(ConnectionServer.prepareRequest(params, false));
+    }
+
+    /**
+     *
+     * @param params
+     * @param isStdObject
+     * @returns {string}
+     */
+    static prepareRequest(params, isStdObject) {
+        if (!isStdObject)
+            return JSON.stringify(params);
+
+        if (!Array.isArray(params)) {
+            params = [params];
+        }
+        return JSON.stringify({stdObject: params});
+    }
+
+    /**
+     *
+     * @param url
+     * @param method
+     * @param params
+     * @param resolve
+     */
+    static simpleRequest(url, method = "POST" , params ,resolve){
         $.ajax({
-            url : url,
+            url: ConnectionServer.HostApi() + url,
             method: method,
-            success: function (response) {
-                resolve(response)
+            data: params,
+            success: function(res){
+                resolve(res)
             }
         })
     }

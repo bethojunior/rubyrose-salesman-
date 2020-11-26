@@ -25,3 +25,10 @@ Route::group(['prefix' => 'typeProduct'], function () {
         Route::delete('{id}', 'TypeProduct\TypeProductController@destroy')->name('.destroy');
     });
 });
+
+
+Route::group(['prefix' => 'sales'], function () {
+    Route::group(['as' => 'sales'], function () {
+        Route::post('', 'Sales\SalesController@create');
+    });
+});

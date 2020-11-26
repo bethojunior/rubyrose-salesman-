@@ -9,7 +9,7 @@
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/home/init.css') }}">
-
+    {{ $sales }}
 @stop
 
 @section('js')
