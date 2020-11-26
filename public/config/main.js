@@ -6,7 +6,15 @@ function getEnvironment(){
                 web : 'http://127.0.0.1:8000/',
                 api : 'http://127.0.0.1:8000/api/',
             }
-        }, {
+        },
+        {
+            name: "http://127.0.0.1:8001/",
+            hosts : {
+                web : 'http://127.0.0.1:8001/',
+                api : 'http://127.0.0.1:8001/api/',
+            }
+        },
+        {
             name: "https://revendedorrubyrose.madgic.com.br/",
             hosts : {
                 web : 'https://revendedorrubyrose.madgic.com.br/',
