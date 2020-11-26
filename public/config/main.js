@@ -7,10 +7,10 @@ function getEnvironment(){
                 api : 'http://127.0.0.1:8000/api/',
             }
         }, {
-            name: "https://rubyrose.madgic.com.br/",
+            name: "https://revendedorrubyrose.madgic.com.br/",
             hosts : {
-                web : 'https://rubyrose.madgic.com.br/',
-                api : 'https://rubyrose.madgic.com.br/api/',
+                web : 'https://revendedorrubyrose.madgic.com.br/',
+                api : 'https://revendedorrubyrose.madgic.com.br/api/',
             }
         },
 
