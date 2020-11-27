@@ -60,13 +60,13 @@
                     <h5 class="card-title"><label for="">{{ $product->name }}</label></h5>
                     <p class="card-text"><label for="">{{ $product->description }}</label></p>
                     <p>
+                        Cor : <span style="background-color: {{ $product->color }}" class="badge">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </p>
+                    <p>
                         <span>Valor : R$ {{ $product->value }}</span>
                     </p>
                     <p>
                         <span>Pedido minimo : {{ $product->minimum_order }} unidades</span>
-                    </p>
-                    <p>
-                        <span>Tipo do produto : {{ $product->type[0]['name'] }}</span>
                     </p>
 
 {{--                    <a href="#" class="btn btn-primary">Go somewhere</a>--}}
