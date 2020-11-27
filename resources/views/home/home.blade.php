@@ -21,20 +21,17 @@
     </div>
     <div class="row col-sm-12 col-lg-12">
     @foreach($sales as $sale)
-            @if($sale->sale_id === $sale->sale_id)
-                <div id="{{ $sale->sale_id }}" class="through-sales card sales col-sm-3 col-lg-3 pt-2">
-                    <p>ID : {{ $sale->sale_id }}</p>
-                    <p>Data : {{ Carbon\Carbon::parse($sale->created_at)->format('d/m/Y')  }}</p>
-                    <p>Produto : {{ $sale->products[0]['name'] }}</p>
-                    <p>Quantidade : {{ $sale->amount }} unidades</p>
-                    <p>Status :
-                        <span>@if ( $sale->status == \App\Constants\SalesStatus::EM_ABERTO ) Em aberto @endif</span>
-                        <span>@if ($sale->status == \App\Constants\SalesStatus::FINALIZADO) Finalizado @endif</span>
-                        <span>@if ($sale->status == \App\Constants\SalesStatus::CANCELADO) Cancelado @endif</span>
-                    </p>
-                </div>
-            @endif
-
+            <div id="{{ $sale->id }}" class="through-sales card sales col-sm-3 col-lg-3 pt-2">
+                <p>ID : {{ $sale->id }}</p>
+                <p>Data : {{ Carbon\Carbon::parse($sale->created_at)->format('d/m/Y')  }}</p>
+                <p>Produto : {{ $sale->products[0]['name'] }}</p>
+                <p>Quantidade : {{ $sale->amount }} unidades</p>
+                <p>Status :
+                    <span>@if ( $sale->status == \App\Constants\SalesStatus::EM_ABERTO ) Em aberto @endif</span>
+                    <span>@if ($sale->status == \App\Constants\SalesStatus::FINALIZADO) Finalizado @endif</span>
+                    <span>@if ($sale->status == \App\Constants\SalesStatus::CANCELADO) Cancelado @endif</span>
+                </p>
+            </div>
         @endforeach
     </div>
 

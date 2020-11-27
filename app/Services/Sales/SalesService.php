@@ -60,12 +60,8 @@ class SalesService
                 $sale = new Sales($data);
                 $sale->save();
                 array_push($saleId,$sale->id);
-                $sale->update(['sale_id' => $saleId[0]]);
-//
-//                $sale->sale_id = $sale->id;
-//                $this->repository->update($sale);
+                $sale->update(['sale_id' => ($saleId[0])]);
             }
-
             DB::commit();
 
         }catch (\Exception $exception){
