@@ -97,6 +97,26 @@
             </div>
         @endforeach
     </div>
+
+    <div id="modal-orders" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Meu carrinho</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="mount-orders">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar pedido</button>
+                    <button id="send-order" type="button" class="btn btn-primary">Enviar pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @stop
 
 @section('js')

@@ -24,6 +24,7 @@ class SalesRepository extends AbstractRepository
             ::with('products')
             ->with('user')
             ->where('user_id','=',$id)
+            ->orderByDesc('id')
             ->get();
     }
 
