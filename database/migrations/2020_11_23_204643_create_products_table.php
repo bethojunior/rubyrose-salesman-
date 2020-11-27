@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->integer('type_product_id');
             $table->string('name');
+            $table->string('status');
             $table->string('description');
             $table->float('value');
             $table->integer('minimum_order');

@@ -4,6 +4,7 @@
 namespace App\Repositories\Products;
 
 
+use App\Constants\ProductStatus;
 use App\Contracts\Repository\AbstractRepository;
 use App\Models\Products\Products;
 
@@ -22,6 +23,7 @@ class ProductsRepository extends AbstractRepository
         return $this->getModel()
             ::with('images')
             ->with('type')
+            ->where('status','=',ProductStatus::ATIVO)
             ->get();
     }
 }
