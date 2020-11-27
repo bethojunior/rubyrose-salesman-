@@ -21,8 +21,8 @@
     </div>
     <div class="row col-sm-12 col-lg-12">
     @foreach($sales as $sale)
-            <div id="{{ $sale->id }}" class="through-sales card sales col-sm-3 col-lg-3 pt-2">
-                <p>ID : {{ $sale->id }}</p>
+            <div id="{{ $sale->sale_id }}" class="through-sales card sales col-sm-3 col-lg-3 pt-2">
+                <p>ID : {{ $sale->sale_id }}</p>
                 <p>Data : {{ Carbon\Carbon::parse($sale->created_at)->format('d/m/Y')  }}</p>
                 <p>Produto : {{ $sale->products[0]['name'] }}</p>
                 <p>Quantidade : {{ $sale->amount }} unidades</p>
