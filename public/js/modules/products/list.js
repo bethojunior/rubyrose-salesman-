@@ -139,6 +139,7 @@ elementProperty.addEventInElement('#send-order','onclick',function (){
         let formData = new FormData();
         formData.append('sales', 'products');
         SalesController.create(products).then(response => {
+
             let data = response.response;
             if(!response.status)
                 return swal('Erro ao inserir suas vendas','Contate o fornecedor','info')
