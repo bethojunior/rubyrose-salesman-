@@ -28,6 +28,10 @@
 #mount-orders , .modal-title{
     color: hotpink!important;
 }
+#mount-orders {
+    max-height: 130vw!important;
+    overflow: scroll!important;
+}
 @media (max-width: 992px){
     .finish-bag{
         cursor: pointer;

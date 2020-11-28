@@ -13,6 +13,7 @@ elementProperty.addEventInElement('.add-bag','onclick',function (){
     let product = JSON.parse(this.getAttribute('data'));
     let id = product.id;
     let name = product.name;
+    let value = parseFloat(product.value);
     elementProperty.getElement(`#qtd-${id}`,product => {
         SwalCustom.dialogConfirm('Adicionar a sacola',`Tem certeza que deseja adicionar ${product.value} unidades de ${name} a sua sacola?`, status => {
             if(!status)
@@ -22,7 +23,8 @@ elementProperty.addEventInElement('.add-bag','onclick',function (){
                 'amount' : parseInt(product.value),
                 'product_id' :  id,
                 'user_id' : UserLogged.id,
-                'name'    : name
+                'name'    : name,
+                'value'   : value,
             };
             products.push(data);
             swal(`${product.value} unidades de ${name} adicionado a sua sacola com sucesso`,'','success');
@@ -87,7 +89,10 @@ elementProperty.addEventInElement('.finish-bag','onclick',function (){
     $('#modal-orders').modal('show')
     elementProperty.getElement('#mount-orders', these => {
         let content = '';
+        let value = '';
         content += products.map(product => {
+            console.log(product)
+            value += (parseFloat(product.value) * parseInt(product.amount))
             return `
                 <div id="" class="row col-lg-12 col-sm-12 card pt-2 pl-2 pb-2 product-${product.product_id}">
                     <p>
@@ -95,6 +100,12 @@ elementProperty.addEventInElement('.finish-bag','onclick',function (){
                     </p>
                     <p>
                         Quantidade : ${product.amount} unidades
+                    </p>
+                    <p>
+                        Valor uniátio : R$ ${product.value}
+                    </p>
+                    <p>
+                        Valor total: R$ ${ (parseFloat(product.value) * parseFloat(product.amount)) }
                     </p>
                     <div class="col-sm-12 col-lg-12">
                         <button name="${product.name}" id="${product.product_id}" class="col-lg-12 col-sm-12 btn btn-outline-danger remove-item-order">
@@ -105,6 +116,7 @@ elementProperty.addEventInElement('.finish-bag','onclick',function (){
             `;
         }).join('');
         these.innerHTML = content;
+        console.log(value);
         elementProperty.addEventInElement('.remove-item-order','onclick',function (){
             let name = this.getAttribute('name');
             SwalCustom.dialogConfirm(`Deseja remover ${name} do carrinho ?`,'',status => {
@@ -118,7 +130,6 @@ elementProperty.addEventInElement('.finish-bag','onclick',function (){
                         let name = product.name;
                         products.splice(products.indexOf(product), 1);
                         elementProperty.getElement('.product-'+id,these => {
-                            console.log(these)
                             these.style.display = 'none';
                         })
                         return swal(`${name} removido`,'','info')
@@ -149,5 +160,17 @@ elementProperty.addEventInElement('#send-order','onclick',function (){
                 window.location.href = 'https://api.whatsapp.com/send?phone=5585994253764&text=Ol%C3%A1%2C%20o%20numero%20do%20meu%20pedido%20'+data.sale_id;
             },2000)
         })
+    })
+})
+
+elementProperty.addEventInElement('#cancel-order','onclick',function (){
+    SwalCustom.dialogConfirm('Deseja esvaziar seu carrinho?','',status => {
+        if(!status)
+            return true;
+
+        $('#modal-orders').modal('hide')
+        swal('Carrinho vazio');
+        products = [];
+
     })
 })

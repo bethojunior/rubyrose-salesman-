@@ -110,7 +110,7 @@
                 <div class="modal-body" id="mount-orders">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar pedido</button>
+                    <button id="cancel-order" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar pedido</button>
                     <button id="send-order" type="button" class="btn btn-primary">Enviar pedido</button>
                 </div>
             </div>
