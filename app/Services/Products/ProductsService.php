@@ -45,6 +45,7 @@ class ProductsService
             'type_product_id'  => $request['type_product_id'],
             'description' => $request['description'],
             'minimum_order' => $request['minimum_order'],
+            'color' => $request['color'],
             'value' => $request['value'],
         ];
         $product = new Products($data);
