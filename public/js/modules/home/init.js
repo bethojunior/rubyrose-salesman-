@@ -1,3 +1,4 @@
+$('.collapse').collapse()
 elementProperty.addEventInElement('#search-id','oninput',function (){
     let key = this.value;
     elementProperty.getElement('.through-sales', cards => {
@@ -5,6 +6,16 @@ elementProperty.addEventInElement('#search-id','oninput',function (){
         if(id !== key)
             return cards.style.display = 'none'
         return cards.style.display = ''
+
+        if(id === ''){
+            elementProperty.getElement('#search-id', these => {
+                these.value = '';
+            })
+            elementProperty.getElement('.through-sales', cards => {
+                return cards.style.display = ''
+            })
+        }
+
     })
 })
 

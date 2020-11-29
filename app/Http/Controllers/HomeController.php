@@ -32,6 +32,11 @@ class HomeController extends Controller
         $user = Auth::user();
         $sales = $this->salesService
             ->getAllByUser($user->id);
-        return view('home.home')->with(['sales' => $sales]);
+
+        foreach ($sales as $sale) {
+            $sales_grouped[$sale->sale_id][] = $sale;
+        }
+
+        return view('home.home')->with(['sales' => $sales_grouped]);
     }
 }
