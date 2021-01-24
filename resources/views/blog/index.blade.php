@@ -11,16 +11,18 @@
     @include('includes.alerts')
     <div class="row">
         @foreach($blogs as $blog)
-            <div class="card col-lg-4 col-sm-12 pt-1 pb-1">
-                <h5>
-                    <p style="color: hotpink">
-                        <b>
-                            {{ $blog->title }}
-                        </b>
-                    </p>
-                </h5>
-                <p style="color: hotpink"> {{ $blog->content }} </p>
-                <img src="{{\App\Constants\ImageConstant::PATH.$blog->image }}">
+            <div class="row col-lg-12 col-sm-12">
+                <div class="card col-lg-4 col-sm-12 pt-1 pb-1">
+                    <h5>
+                        <p style="color: hotpink">
+                            <b>
+                                {{ $blog->title }}
+                            </b>
+                        </p>
+                    </h5>
+                    <p style="color: hotpink"> {{ $blog->content }} </p>
+                    <img src="{{\App\Constants\ImageConstant::PATH.$blog->image }}">
+                </div>
             </div>
         @endforeach
     </div>
