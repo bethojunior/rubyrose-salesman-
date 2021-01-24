@@ -228,6 +228,12 @@ return [
         ],
 
         [
+            'text' => 'Blog',
+            'url'  => 'blog',
+            'icon' => 'fas fa-fw fa-blog',
+        ],
+
+        [
             'text' => 'Produtos',
             'url'  => 'products/list',
             'icon' => 'fas fa-fw fa-home',
