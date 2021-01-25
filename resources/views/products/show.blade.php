@@ -35,7 +35,7 @@
         </div>
         @foreach($products as $product)
             <div title="{{ $product->name }}" type="{{ $product->type_product_id }}" style="padding-top: 2vw" class="card col-lg-4 col-sm-12 product">
-                <div  id="carouselExampleControls{{$product->id}}" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleControls{{$product->id}}" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active item-carousel">
                             <img src="{{ asset('assets/images/logo/logo.jpeg') }}" class="d-block w-100" alt="...">
@@ -63,7 +63,14 @@
                         Cor : <span style="background-color: {{ $product->color }}" class="badge">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </p>
                     <p>
-                        <span>Valor : R$ {{ $product->value }}</span>
+
+                        @if($product->promotional_value !== null)
+                            <span class="badge-success pl-1 pr-1 pt-1 pb-1">De : R$ <span style="text-decoration: line-through;">{{ $product->value }}</span> Por R$ {{ $product->promotional_value }} </span>
+                        @elseif($product->promotional_value === null)
+                            <span>R$ {{ $product->value }} </span>
+                        @endif
+
+
                     </p>
                     <p>
                         <span>Pedido minimo : {{ $product->minimum_order }} unidades</span>
