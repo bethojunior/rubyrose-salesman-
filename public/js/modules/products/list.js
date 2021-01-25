@@ -35,12 +35,12 @@ elementProperty.addEventInElement('.add-bag','onclick',function (){
 
 elementProperty.addEventInElement('.add-item','onclick',function (){
     let data = JSON.parse(this.getAttribute('product'));
+    let minimum_order = data.minimum_order;
+
     let id = data.id;
     elementProperty.getElement(`#qtd-${id}`, product => {
-        let actualValue = product.value;
-        product.value = (parseInt(actualValue) + 1);
-
-        // SwalCustom.toast(product.value + ' itens | ' + data.name+' Adcionado a sua sacola','','','');
+        let actualValue = parseInt(product.value);
+        product.value = (actualValue + minimum_order);
     });
 })
 
@@ -51,9 +51,9 @@ elementProperty.addEventInElement('.remove-item','onclick',function (){
 
     elementProperty.getElement(`#qtd-${id}`,product => {
         let actualValue = parseInt(product.value);
-        let qtd = product.value = (parseInt(actualValue) - 1);
+        let qtd = product.value = (actualValue - min);
         if(qtd > min)
-            return SwalCustom.toast('1 item | ' + data.name+' removido a sua sacola','','','');
+            return true;//SwalCustom.toast('1 item | ' + data.name+' removido a sua sacola','','','');
         product.value = min;
         return swal(`O pedido mínimo para ${data.name} são ${min} unidades`,'','info');
     });
