@@ -224,7 +224,13 @@ return [
         [
             'text' => 'Meu perfil',
             'url'  => 'user/find',
-            'icon' => 'fas fa-fw fa-home',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+
+        [
+            'text' => 'Quem somos',
+            'url'  => 'us',
+            'icon' => 'fas fa-fw fa-users',
         ],
 
         [
@@ -236,7 +242,17 @@ return [
         [
             'text' => 'Produtos',
             'url'  => 'products/list',
-            'icon' => 'fas fa-fw fa-home',
+            'icon' => 'fas fa-fw fa-cart-plus',
+        ],
+        [
+            'text' => 'Contato',
+            'url'  => 'products/list',
+            'icon' => 'fas fa-fw fa-phone',
+        ],
+        [
+            'text' => 'SAC',
+            'url'  => 'products/list',
+            'icon' => 'fas fa-fw fa-phone-square',
         ],
 
 

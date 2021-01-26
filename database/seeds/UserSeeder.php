@@ -29,9 +29,9 @@ class UserSeeder extends Seeder
                 'user_type_id' => '1',
             ],
             [
-                'name' => 'rubia',
-                'email' => 'teste@teste.com',
-                'phone' => '85994253764',
+                'name' => 'Rubia',
+                'email' => 'teste@teste.com.br',
+                'phone' => '85994253762',
                 'password' => Hash::make('admin12'),
                 'user_status_id' => '2',
                 'user_type_id' => '2',

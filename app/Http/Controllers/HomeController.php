@@ -42,4 +42,5 @@ class HomeController extends Controller
         return view('home.home')->with(['sales' => $sales]);
 
     }
+
 }

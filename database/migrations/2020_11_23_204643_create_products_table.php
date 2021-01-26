@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('color');
             $table->string('description');
             $table->float('value');
+            $table->float('promotional_value')->nullable();
             $table->integer('minimum_order');
             $table->timestamps();
         });

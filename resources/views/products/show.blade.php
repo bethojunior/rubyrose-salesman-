@@ -70,7 +70,6 @@
                             <span>R$ {{ $product->value }} </span>
                         @endif
 
-
                     </p>
                     <p>
                         <span>Pedido minimo : {{ $product->minimum_order }} unidades</span>
