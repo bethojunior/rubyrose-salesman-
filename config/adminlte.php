@@ -246,13 +246,18 @@ return [
         ],
         [
             'text' => 'Contato',
-            'url'  => 'products/list',
+            'url'  => 'settings/sales',
             'icon' => 'fas fa-fw fa-phone',
         ],
         [
             'text' => 'SAC',
-            'url'  => 'products/list',
+            'url'  => "settings/sac",
             'icon' => 'fas fa-fw fa-phone-square',
+        ],
+        [
+            'text' => 'Redes Sociais',
+            'url'  => "settings/social",
+            'icon' => 'fas fa-share-square',
         ],
 
 

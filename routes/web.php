@@ -58,5 +58,17 @@ Route::group(['middleware' => 'auth'], function () {
         });
     });
 
+    Route::group(['prefix' => 'settings'], function () {
+        Route::group(['as' => 'settings'], function () {
+            Route::get('sales', 'Settings\SettingsController@talkWithSales')->name('.talkWithSales');
+            Route::get('sac', 'Settings\SettingsController@sac')->name('.sac');
+            Route::get('social', 'Settings\SettingsController@social')->name('.social');
+        });
+    });
+
+
+
+
+
 });
 
