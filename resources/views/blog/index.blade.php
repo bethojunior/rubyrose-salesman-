@@ -22,6 +22,7 @@
                     </h5>
                     <p style="color: hotpink"> {{ $blog->content }} </p>
                     <img src="{{\App\Constants\ImageConstant::PATH.$blog->image }}">
+                    <label style="color: lightpink">{{ Carbon\Carbon::parse($blog->created_at)->format('d/m/Y - H:m:s')  }}</label>
                 </div>
             </div>
         @endforeach
