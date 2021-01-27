@@ -19,10 +19,12 @@ class SettingsController extends Controller
         return Redirect::to('https://instabio.cc/rubyrosece');
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function sac()
     {
-        $user = Auth::user();
-        header('Location: https://api.whatsapp.com/send?phone='.$user->phone);
+        return view('settings.sac');
     }
 
     /**
