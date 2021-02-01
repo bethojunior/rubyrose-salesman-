@@ -111,4 +111,16 @@ class ConnectionServer {
         })
     }
 
+
+    static phone(url, method = "POST" , params ,resolve){
+        $.ajax({
+            url: 'https://rubyrose.madgic.com.br/api/' + url,
+            method: method,
+            data: params,
+            success: function(res){
+                resolve(res)
+            }
+        })
+    }
+
 }
