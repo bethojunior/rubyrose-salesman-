@@ -18,7 +18,7 @@ class SalesController extends ConnectionServer{
     static getPhone()
     {
         return new Promise(resolve => {
-            this.phone('phone','GET', '',resolve)
+            this.simpleRequest('phone','GET', '',resolve)
         })
     }
 }
