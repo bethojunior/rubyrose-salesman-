@@ -151,7 +151,7 @@ elementProperty.addEventInElement('#send-order','onclick',function (){
         formData.append('sales', 'products');
         SalesController.create(products).then(response => {
             SalesController.getPhone().then(callback => {
-                let phone = callback.data;
+                let phone = callback.response;
                 phone = phone.phone;
                 let data = response.response;
                 if(!response.status)
