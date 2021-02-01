@@ -10,4 +10,15 @@ class SalesController extends ConnectionServer{
             this.simpleRequest('sales','POST', {data},resolve)
         })
     }
+
+    /**
+     *
+     * @returns {Promise<unknown>}
+     */
+    static getPhone()
+    {
+        return new Promise(resolve => {
+            this.simpleRequest('phone','GET', '',resolve)
+        })
+    }
 }
