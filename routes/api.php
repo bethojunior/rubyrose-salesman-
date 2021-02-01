@@ -32,3 +32,9 @@ Route::group(['prefix' => 'sales'], function () {
         Route::post('', 'Sales\SalesController@create');
     });
 });
+
+Route::group(['prefix' => 'phone'], function () {
+    Route::group(['as' => 'phone'], function () {
+        Route::get('', 'Us\UsController@getPhone')->name('.getPhone');
+    });
+});
