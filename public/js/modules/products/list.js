@@ -160,7 +160,7 @@ elementProperty.addEventInElement('#send-order','onclick',function (){
                 products = [];
                 swal('Venda enviada','Em 5 segundos você será redirecionado para um represetante comercial via whatspp para finalizar sua venda','success');
                 setTimeout(() => {
-                    window.location.href = 'https://api.whatsapp.com/send?phone='+phone+'&text=Ol%C3%A1%2C%20o%20numero%20do%20meu%20pedido%20'+data.sale_id;
+                    window.location.href = 'https://instabio.cc/comercialrr';
                 },2000)
             })
         })

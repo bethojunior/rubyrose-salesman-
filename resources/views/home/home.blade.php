@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/home/init.css') }}">
     <div class="row col-lg-12 col-sm-12">
         <div class="form-group col-lg-4 col-sm-12">
-            <span>Buscar por ID</span>
+            <span>Buscar por n° do pedido</span>
             <input class="form-control" id="search-id">
         </div>
         <div class="form-group col-lg-3 col-sm-12">

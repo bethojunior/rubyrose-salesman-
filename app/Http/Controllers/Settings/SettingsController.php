@@ -33,7 +33,7 @@ class SettingsController extends Controller
     public function talkWithSales()
     {
         $user = Auth::user();
-        return Redirect::to('https://api.whatsapp.com/send?phone='.$user->phone);
+        return Redirect::to('https://instabio.cc/comercialrr');
     }
 
 }
