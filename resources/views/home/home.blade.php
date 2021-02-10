@@ -39,7 +39,7 @@
     <div class="row col-lg-12 col-sm-12">
         @foreach($sales as $key => $sale)
             <div style="color: deeppink" id="{{ $key }}"  class="through-sales card col-lg-12 col-sm-12 pt-2 pb-2">
-                <p>ID : {{ $key }} </p>
+                <p>N° do pedido : {{ $key }} </p>
                 <p>Data : {{ Carbon\Carbon::parse($sale[0]['created_at'])->format('d/m/Y - H:m:s')  }} hrs</p>
                 <div class="accordion" id="accordionExample">
                     <div class="card">
